@@ -1,0 +1,4 @@
+/node_modules
+/db/diagnostic.data
+/db/journal
+.env
