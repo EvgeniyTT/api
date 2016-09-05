@@ -9,9 +9,13 @@ router.get('/git/:gitUserName/:gitRepository', (req, res, next) => {
   const gitUserName = req.params.gitUserName;
   const gitRepository = req.params.gitRepository;
   const async = app.sync(() => {
-    const githubFetch = app.wait(fetch(`https://api.github.com/repos/${gitUserName}/${gitRepository}`));
-    const githubFetchInfo = app.wait(githubFetch.json());
-    res.json(githubFetchInfo);
+    try {
+      const githubFetch = app.wait(fetch(`https://api.github.com/repos/${gitUserName}/${gitRepository}`));
+      const githubFetchInfo = app.wait(githubFetch.json());
+      res.json(githubFetchInfo);
+    } catch (error) {
+      res.send(error);
+    }
   });
   async();
 });
