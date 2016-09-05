@@ -9,6 +9,9 @@ require('dotenv').config();
 require('./lib/mongoose')(app);
 require('./lib/router')(app);
 
+app.sync = require('asyncawait/async');
+app.wait = require('asyncawait/await');
+
 if (!module.parent) {
   app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => {
     console.log(`app listening on host ${process.env.SERVER_HOST} port ${process.env.SERVER_PORT}!`);

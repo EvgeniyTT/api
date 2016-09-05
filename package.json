@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "asyncawait": "^1.0.6",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "glob": "^7.0.6",
     "mongodb": "^2.2.8",
-    "mongoose": "^4.5.10"
+    "mongoose": "^4.5.10",
+    "node-fetch": "^1.6.0"
   },
   "devDependencies": {
     "eslint": "^3.2.2",
